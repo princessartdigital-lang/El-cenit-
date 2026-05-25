@@ -180,23 +180,20 @@ body {
 
 .tarjeta {
   background: #111111;
-  border: 1px solid rgba(255, 255, 255, 0.05); /* Borde inicial muy discreto */
+  border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 35px 25px;
   border-radius: 8px;
   text-align: left;
-  /* Transición suave para el movimiento, el color de fondo, el borde y la sombra */
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
               border-color 0.4s ease, 
               background 0.4s ease, 
               box-shadow 0.4s ease;
 }
 
-/* El efecto visual cuando pasas el ratón por encima */
 .tarjeta:hover {
   transform: translateY(-6px);
-  background: #161616; /* Se aclara sutilmente el fondo */
-  border-color: rgba(255, 255, 255, 0.25); /* El borde se ilumina */
-  /* Añade un destello blanco difuminado alrededor (Glow effect) */
+  background: #161616;
+  border-color: rgba(255, 255, 255, 0.25);
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03); 
 }
 
@@ -211,6 +208,55 @@ body {
   font-size: 14px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.7);
+}
+
+/* ESTILOS DEL NUEVO FORMULARIO DE CONTACTO */
+.formulario-contacto {
+  max-width: 450px;
+  margin: 40px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.grupo-input input {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 15px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+/* Efecto cuando el usuario hace clic para escribir */
+.grupo-input input:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Estilo del botón enviar formulario */
+#btn-enviar-formulario {
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+  padding: 14px;
+  border: 1px solid #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+#btn-enviar-formulario:hover {
+  background: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 /* BOTONES GENERALES */
@@ -232,16 +278,6 @@ button:hover {
   color: black;
 }
 
-#btn-entrar {
-  background: white;
-  color: black;
-}
-
-#btn-entrar:hover {
-  background: transparent;
-  color: white;
-}
-
 /* RESPONSIVE (MÓVILES) */
 @media (max-width: 768px) {
   .grid-pilares { grid-template-columns: 1fr; }
@@ -250,4 +286,5 @@ button:hover {
   .navbar .enlaces a { padding: 6px 12px; font-size: 12px; }
   .navbar .logo { padding: 6px 12px; font-size: 13px; }
   .bloque-info { grid-template-columns: 1fr; gap: 20px; }
+  .formulario-contacto { max-width: 100%; }
 }

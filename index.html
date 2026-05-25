@@ -72,8 +72,17 @@
   <section id="comenzar" class="seccion final">
     <div class="contenido">
       <h2>¿Listo para asegurar tu legado?</h2>
-      <p>Estamos construyendo el estándar del mañana. Conéctate con el futuro.</p>
-      <button id="btn-entrar">Comenzar</button>
+      <p>Estamos construyendo el estándar del mañana. Déjanos tus datos para ser de los primeros en Tenerife en acceder.</p>
+      
+      <form class="formulario-contacto" onsubmit="event.preventDefault(); alert('¡Gracias por tu interés en El Cénit! Nos pondremos en contacto pronto.');">
+        <div class="grupo-input">
+          <input type="text" placeholder="Tu nombre" required>
+        </div>
+        <div class="grupo-input">
+          <input type="email" placeholder="Tu correo electrónico" required>
+        </div>
+        <button type="submit" id="btn-enviar-formulario">Solicitar Acceso</button>
+      </form>
     </div>
   </section>
 
