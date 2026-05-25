@@ -6,15 +6,16 @@ body {
   scroll-behavior: smooth;
 }
 
+/* BARRA DE NAVEGACIÓN MEJORADA */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nav-contenedor {
@@ -23,31 +24,64 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15px 20px; /* Un poco más estilizado */
 }
 
+/* El logotipo transformado en un botón de marca elegante */
 .navbar .logo {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 600;
   color: #fff;
   text-decoration: none;
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
+.navbar .logo:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Enlaces de navegación alineados verticalmente */
 .navbar .enlaces {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 25px;
 }
 
 .navbar .enlaces a {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .navbar .enlaces a:hover {
   color: #fff;
 }
 
+/* Botón "Comenzar" destacado en la barra superior */
+.navbar .enlaces .btn-nav {
+  background: #ffffff;
+  color: #000000 !important;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  transition: background 0.3s ease, transform 0.2s ease !important;
+}
+
+.navbar .enlaces .btn-nav:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-1px);
+}
+
+/* HERO (PORTADA) */
 .hero {
   height: 100vh;
   display: flex;
@@ -60,20 +94,24 @@ body {
 .hero h1 {
   font-size: 70px;
   margin: 0 0 10px 0;
+  letter-spacing: -2px;
 }
 
 .hero p {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto 20px auto;
 }
 
+/* SECCIONES ESTÁNDAR */
 .seccion {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px 80px 20px;
   box-sizing: border-box;
 }
 
@@ -88,36 +126,61 @@ body {
 .contenido, .contenido-ancho {
   max-width: 900px;
   margin: 0 auto;
+  width: 100%;
 }
 
+.subtitulo {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 40px;
+}
+
+/* REJILLA DE PILARES */
 .grid-pilares {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 25px;
   margin-top: 40px;
 }
 
 .tarjeta {
-  background: #111;
-  border: 1px solid #222;
-  padding: 30px;
+  background: #111111;
+  border: 1px solid #222222;
+  padding: 35px 25px;
   border-radius: 8px;
   text-align: left;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  border-color: #444444;
 }
 
 .tarjeta h3 {
   margin-top: 0;
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 
+.tarjeta p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* BOTONES GENERALES */
 button {
   background: transparent;
   color: white;
   border: 1px solid white;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 4px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 6px;
   cursor: pointer;
   margin-top: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
@@ -125,7 +188,20 @@ button:hover {
   color: black;
 }
 
+#btn-entrar {
+  background: white;
+  color: black;
+}
+
+#btn-entrar:hover {
+  background: transparent;
+  color: white;
+}
+
+/* RESPONSIVE (MÓVILES) */
 @media (max-width: 768px) {
   .grid-pilares { grid-template-columns: 1fr; }
   .hero h1 { font-size: 45px; }
+  .navbar .enlaces { gap: 15px; }
+  .navbar .logo { padding: 6px 12px; font-size: 14px; }
 }
