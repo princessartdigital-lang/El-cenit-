@@ -24,10 +24,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px; /* Un poco más estilizado */
+  padding: 15px 20px;
 }
 
-/* El logotipo transformado en un botón de marca elegante */
+/* El logotipo: Botón de marca redondeado u ovalado */
 .navbar .logo {
   font-size: 16px;
   font-weight: 600;
@@ -46,38 +46,43 @@ body {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Enlaces de navegación alineados verticalmente */
+/* Enlaces de navegación alineados */
 .navbar .enlaces {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 15px; /* Un poco más ajustado para que queden perfectos en línea */
 }
 
+/* Concepto y Pilares: Estilo Cénit pero rectangulares como Comenzar */
 .navbar .enlaces a {
-  color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 16px;
+  border-radius: 6px; /* Rectangular con bordes suavizados igual que Comenzar */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  box-sizing: border-box;
 }
 
 .navbar .enlaces a:hover {
-  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Botón "Comenzar" destacado en la barra superior */
+/* Botón "Comenzar": Destacado con fondo blanco sólido */
 .navbar .enlaces .btn-nav {
-  background: #ffffff;
+  background: #ffffff !important;
   color: #000000 !important;
-  padding: 8px 16px;
-  border-radius: 6px;
   font-weight: 600;
-  font-size: 13px;
-  transition: background 0.3s ease, transform 0.2s ease !important;
+  border: 1px solid #ffffff;
 }
 
 .navbar .enlaces .btn-nav:hover {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.85);
   transform: translateY(-1px);
 }
 
@@ -202,6 +207,7 @@ button:hover {
 @media (max-width: 768px) {
   .grid-pilares { grid-template-columns: 1fr; }
   .hero h1 { font-size: 45px; }
-  .navbar .enlaces { gap: 15px; }
-  .navbar .logo { padding: 6px 12px; font-size: 14px; }
+  .navbar .enlaces { gap: 10px; }
+  .navbar .enlaces a { padding: 6px 12px; font-size: 12px; }
+  .navbar .logo { padding: 6px 12px; font-size: 13px; }
 }
