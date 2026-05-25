@@ -27,7 +27,7 @@ body {
   padding: 15px 20px;
 }
 
-/* El logotipo: Botón de marca redondeado u ovalado */
+/* El logotipo: Botón de marca redondeado */
 .navbar .logo {
   font-size: 16px;
   font-weight: 600;
@@ -46,14 +46,14 @@ body {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Enlaces de navegación alineados */
+/* Enlaces de navegación */
 .navbar .enlaces {
   display: flex;
   align-items: center;
-  gap: 15px; /* Un poco más ajustado para que queden perfectos en línea */
+  gap: 15px;
 }
 
-/* Concepto y Pilares: Estilo Cénit pero rectangulares como Comenzar */
+/* Concepto y Pilares rectangulares */
 .navbar .enlaces a {
   color: #ffffff;
   text-decoration: none;
@@ -61,7 +61,7 @@ body {
   font-weight: 500;
   background: rgba(255, 255, 255, 0.05);
   padding: 8px 16px;
-  border-radius: 6px; /* Rectangular con bordes suavizados igual que Comenzar */
+  border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
   box-sizing: border-box;
@@ -72,7 +72,7 @@ body {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Botón "Comenzar": Destacado con fondo blanco sólido */
+/* Botón "Comenzar" destacado */
 .navbar .enlaces .btn-nav {
   background: #ffffff !important;
   color: #000000 !important;
@@ -140,7 +140,37 @@ body {
   margin-bottom: 40px;
 }
 
-/* REJILLA DE PILARES */
+/* BLOQUES DE TEXTO CONCEPTO */
+.introduccion {
+  font-size: 20px !important;
+  line-height: 1.7;
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+.bloque-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.info-item h3 {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 10px;
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+  padding-left: 12px;
+}
+
+.info-item p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* REJILLA DE PILARES CON EFECTO PRO ILUMINADO */
 .grid-pilares {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -150,22 +180,31 @@ body {
 
 .tarjeta {
   background: #111111;
-  border: 1px solid #222222;
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Borde inicial muy discreto */
   padding: 35px 25px;
   border-radius: 8px;
   text-align: left;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  /* Transición suave para el movimiento, el color de fondo, el borde y la sombra */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.4s ease, 
+              background 0.4s ease, 
+              box-shadow 0.4s ease;
 }
 
+/* El efecto visual cuando pasas el ratón por encima */
 .tarjeta:hover {
-  transform: translateY(-5px);
-  border-color: #444444;
+  transform: translateY(-6px);
+  background: #161616; /* Se aclara sutilmente el fondo */
+  border-color: rgba(255, 255, 255, 0.25); /* El borde se ilumina */
+  /* Añade un destello blanco difuminado alrededor (Glow effect) */
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03); 
 }
 
 .tarjeta h3 {
   margin-top: 0;
   font-size: 20px;
   margin-bottom: 15px;
+  color: #ffffff;
 }
 
 .tarjeta p {
@@ -210,37 +249,5 @@ button:hover {
   .navbar .enlaces { gap: 10px; }
   .navbar .enlaces a { padding: 6px 12px; font-size: 12px; }
   .navbar .logo { padding: 6px 12px; font-size: 13px; }
-}
-/* NUEVOS BLOQUES DE TEXTO CONCEPTO */
-.introduccion {
-  font-size: 20px !important;
-  line-height: 1.7;
-  margin-bottom: 50px;
-  color: #ffffff;
-}
-
-.bloque-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  text-align: left;
-  margin-top: 30px;
-}
-
-.info-item h3 {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 10px;
-  border-left: 2px solid rgba(255, 255, 255, 0.3);
-  padding-left: 12px;
-}
-
-.info-item p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-@media (max-width: 768px) {
   .bloque-info { grid-template-columns: 1fr; gap: 20px; }
 }
