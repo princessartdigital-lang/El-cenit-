@@ -8,6 +8,53 @@ body {
   overflow-x: hidden;
 }
 
+/* BARRA DE NAVEGACIÓN PRO */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.75); /* Fondo negro translúcido */
+  backdrop-filter: blur(12px); /* Efecto difuminado tipo Apple */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+}
+
+.nav-contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+}
+
+.navbar .logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.navbar .enlaces {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar .enlaces a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar .enlaces a:hover {
+  color: #fff; /* Se ilumina al pasar el ratón */
+}
+
 /* HERO (PORTADA) */
 .hero {
   height: 100vh;
@@ -39,7 +86,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px 80px 20px; /* Añadido espacio superior para la barra */
   box-sizing: border-box;
 }
 
@@ -48,23 +95,24 @@ body {
 }
 
 .final {
-  background: linear-gradient(to bottom, #000000, #111111);
+  background: linear-gradient(to bottom, #0a0a0a, #000);
 }
 
-/* CONTENEDORES DE TEXTO */
 .contenido {
   max-width: 650px;
   margin: 0 auto;
 }
 
 .contenido-ancho {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   width: 100%;
 }
 
+/* TEXTOS */
 h2 {
   font-size: 42px;
+  margin-top: 0;
   margin-bottom: 20px;
   letter-spacing: -1px;
 }
@@ -123,22 +171,31 @@ button {
   color: white;
   font-size: 16px;
   font-weight: 500;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
   background: white;
   color: black;
-  transform: scale(1.03);
 }
 
-/* ANIMACIONES CON SCROLL */
+#btn-entrar {
+  background: white;
+  color: black;
+}
+
+#btn-entrar:hover {
+  background: transparent;
+  color: white;
+}
+
+/* ANIMACIÓN SCROLL SUTIL */
 .scroll {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s cubic-bezier(0.215, 0.610, 0.355, 1);
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .scroll.activo {
@@ -146,24 +203,13 @@ button:hover {
   transform: translateY(0);
 }
 
-/* RESPONSIVE (MÓVILES Y TABLETS) */
-@media (max-width: 900px) {
-  .grid-pilares {
-    grid-template-columns: 1fr; /* Pasa a ser una sola columna en móviles */
-    gap: 20px;
-  }
-}
-
+/* RESPONSIVE (MÓVILES) */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 50px;
-  }
-
-  h2 {
-    font-size: 32px;
-  }
-
-  .hero p {
-    font-size: 18px;
-  }
+  .hero h1 { font-size: 50px; }
+  .hero p { font-size: 18px; }
+  h2 { font-size: 32px; }
+  .grid-pilares { grid-template-columns: 1fr; }
+  .nav-contenedor { padding: 15px 20px; }
+  .navbar .enlaces { gap: 15px; }
+  .navbar .enlaces a { font-size: 13px; }
 }
